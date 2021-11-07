@@ -253,12 +253,24 @@ const App = ({ title }) => {
         Canonical SMILES for molecules
       </h2>
       <p>
-        The details can be found in the paper "A
+        The details can be found from the paper "A
         Computationally-Realizable Rigorous Canonical Numbering
         Algorithm for Chemical Graphs with its Open-Source
-        Implementation in Rust". Welcome to check
+        Implementation in Rust" and the open-source repositories{' '}
+        <a href="https://github.com/chiral-data/rust-graph-symmetry">
+          Rust graph-symmetry
+        </a>
+        and its{' '}
+        <a href="https://github.com/chiral-data/rust-graph-symmetry-webassembly">
+          WASM Binding
+        </a>
+        .
+      </p>
+      <p>
+        Welcome to check
         <a href="https://chiral-data.github.io/"> our site</a>!
       </p>
+
       <div>
         <ButtonGroup size="lg">
           {radios.map((radio, idx) => (
@@ -306,10 +318,11 @@ const App = ({ title }) => {
             }}
           />
         </div>
-        <p>SMILES inputted: {smiles}</p>
+        <p hidden={!smiles}>SMILES inputted: {smiles}</p>
         <p>{csmiles}</p>
       </div>
       <Button
+        hidden={!smiles}
         onClick={() => {
           numbering.length === 0
             ? setNumbering([...Array(countAtoms).keys()])
@@ -364,6 +377,36 @@ const App = ({ title }) => {
           </Panel>
         </HorizontalLayout>
       </VerticalLayout>
+      <p>Courtesies to the following open-source projects</p>
+      <ul>
+        <li>
+          Molecule Editor:{' '}
+          <a href="https://jsme-editor.github.io/dist/index.html">
+            JSME Molecule Editor
+          </a>{' '}
+          and the{' '}
+          <a href="https://github.com/DouglasConnect/jsme-react">
+            React wrapped component
+          </a>
+        </li>
+        <li>
+          Molecule Drawer:{' '}
+          <a href="https://github.com/reymond-group/smilesDrawer">
+            smilesDrawer
+          </a>{' '}
+          and the feature-added{' '}
+          <a href="https://github.com/rogerwq/smilesDrawer">
+            forked version
+          </a>
+        </li>
+        <li>
+          The framework{' '}
+          <a href="https://github.com/rwieruch/minimal-react-webpack-babel-setup">
+            minimal-react-webpack-babel-setup
+          </a>{' '}
+          to setup this demo
+        </li>
+      </ul>
     </div>
   );
 };

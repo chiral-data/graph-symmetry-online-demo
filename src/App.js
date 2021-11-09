@@ -30,7 +30,7 @@ const popular_molecules = [
   {
     value: 'N1=C(c3c(Sc2c1cccc2)cccc3)N4CCN(CCOCCO)CC4',
     label:
-      'Medicine 2 Quetiapine (Lipitor): N1=C(c3c(Sc2c1cccc2)cccc3)N4CCN(CCOCCO)CC4'
+      'Medicine 2 Quetiapine (Seroquel): N1=C(c3c(Sc2c1cccc2)cccc3)N4CCN(CCOCCO)CC4'
   },
   {
     value:
